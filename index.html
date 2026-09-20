@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   
-  <!-- ==================== STYLE SECTION STARTS HERE ==================== -->
   <style>
     :root {
       --bg-color: #faf7f5;
@@ -142,8 +141,6 @@
       font-size: 1.2rem;
     }
 
-   
-
     /* EVENT CARD */
     .event-card {
       background: #faf7fc;
@@ -198,6 +195,10 @@
       color: var(--text-dark);
     }
 
+    .cal-day.empty {
+      pointer-events: none;
+    }
+
     /* HIGHLIGHTED TARGET DATE */
     .cal-day.highlight {
       background: var(--accent-gold);
@@ -233,7 +234,13 @@
       font-size: 0.85rem;
       transition: 0.3s;
       text-align: center;
-    
+    }
+
+    .map-btn {
+      background: white;
+      border: 1.5px solid var(--accent-gold);
+      color: var(--accent-gold);
+    }
 
     .map-btn:hover {
       background: var(--accent-gold);
@@ -264,7 +271,6 @@
       font-size: 1.2rem;
     }
   </style>
-  <!-- ==================== STYLE SECTION ENDS HERE ==================== -->
 </head>
 <body>
 
@@ -291,14 +297,6 @@
       <strong>NANDINI &amp; ABHISHEK</strong>
     </p>
 
-    <!-- BABY IMAGE PLACED BEFORE THE CALENDAR -->
-    <div class="baby-photo-wrapper">
-      <div class="baby-photo-frame">
-        <!-- Make sure your picture file in GitHub is named baby.jpg -->
-        <img src="baby.jpg" alt="Baby Photo">
-      </div>
-    </div>
-
     <div class="divider">❦ ❦ ❦</div>
 
     <!-- Event Details & Calendar Box -->
@@ -318,6 +316,7 @@
           <div class="cal-header">F</div>
           <div class="cal-header">S</div>
 
+          <!-- Sep 2026 starts on Tuesday (2 empty slots: Sun, Mon) -->
           <div class="cal-day empty"></div>
           <div class="cal-day empty"></div>
           <div class="cal-day">1</div>
@@ -334,7 +333,7 @@
           <div class="cal-day">12</div>
           <div class="cal-day">13</div>
           <div class="cal-day">14</div>
-          <div class="cal-day">16</div>
+          <div class="cal-day">15</div>
           <div class="cal-day">16</div>
           <div class="cal-day">17</div>
           <div class="cal-day">18</div>
@@ -344,8 +343,10 @@
           <div class="cal-day">22</div>
           <div class="cal-day">23</div>
           <div class="cal-day">24</div>
-          <!-- Highlighted date -->
+          
+          <!-- Highlighted date: Friday, Sep 25 -->
           <div class="cal-day highlight">25</div>
+          
           <div class="cal-day">26</div>
           <div class="cal-day">27</div>
           <div class="cal-day">28</div>
@@ -361,7 +362,7 @@
 
       <h3 style="font-family: var(--serif); color: var(--accent-gold);">Venue</h3>
       <p class="venue-address">
-        <strong>At our Recedency</strong><br>
+        <strong>At our Residency</strong><br>
         Narava,<br>
         Visakhapatnam, AP
       </p>
@@ -371,7 +372,8 @@
           📍 Open in Google Maps
         </a>
 
-        <a class="action-btn cal-add-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Naming+Ceremony+of+Baby+Ananya&dates=20261115T050000Z/20261115T083000Z&details=You+are+warmly+invited+to+celebrate+the+Naming+Ceremony+with+us.&location=Grand+Celebrations+Banquet+Hall,+Brahmapur" target="_blank">
+        <!-- Updated for Sep 25, 2026 -->
+        <a class="action-btn cal-add-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Naming+Ceremony+of+Baby+Boy&dates=20260925T050000Z/20260925T083000Z&details=You+are+warmly+invited+to+celebrate+the+Naming+Ceremony+with+us.&location=Narava,+Visakhapatnam,+AP" target="_blank">
           🗓️ Add to Google Calendar
         </a>
       </div>
