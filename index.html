@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   
+  <!-- ==================== STYLE SECTION STARTS HERE ==================== -->
   <style>
     :root {
       --bg-color: #faf7f5;
@@ -132,22 +133,48 @@
     .parents {
       font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .divider {
-      margin: 25px auto;
+      margin: 20px auto;
       color: var(--accent-gold);
       font-size: 1.2rem;
     }
 
-    /* CARD DETAILS */
+    /* BABY PHOTO FRAME */
+    .baby-photo-wrapper {
+      margin: 20px auto 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .baby-photo-frame {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-gold);
+      padding: 4px;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(194, 155, 56, 0.25);
+      position: relative;
+    }
+
+    .baby-photo-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* EVENT CARD */
     .event-card {
       background: #faf7fc;
       border: 1px solid #ebdff2;
       border-radius: 16px;
       padding: 24px 18px;
-      margin: 25px 0;
+      margin: 20px 0;
     }
 
     /* CALENDAR COMPONENT */
@@ -155,7 +182,7 @@
       background: #ffffff;
       border-radius: 12px;
       padding: 16px 12px;
-      margin: 18px auto;
+      margin: 16px auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
       max-width: 320px;
       border: 1px solid #efe8f5;
@@ -195,10 +222,6 @@
       color: var(--text-dark);
     }
 
-    .cal-day.empty {
-      pointer-events: none;
-    }
-
     /* HIGHLIGHTED TARGET DATE */
     .cal-day.highlight {
       background: var(--accent-gold);
@@ -206,14 +229,6 @@
       font-weight: 600;
       box-shadow: 0 3px 10px rgba(194, 155, 56, 0.45);
       position: relative;
-    }
-
-    .cal-day.highlight::after {
-      content: '♥';
-      position: absolute;
-      bottom: -6px;
-      font-size: 0.6rem;
-      color: var(--accent-gold);
     }
 
     .venue-address {
@@ -279,6 +294,7 @@
       font-size: 1.2rem;
     }
   </style>
+  <!-- ==================== STYLE SECTION ENDS HERE ==================== -->
 </head>
 <body>
 
@@ -305,6 +321,14 @@
       <strong>Mother's Name &amp; Father's Name</strong>
     </p>
 
+    <!-- BABY IMAGE PLACED BEFORE THE CALENDAR -->
+    <div class="baby-photo-wrapper">
+      <div class="baby-photo-frame">
+        <!-- Make sure your picture file in GitHub is named baby.jpg -->
+        <img src="baby.jpg" alt="Baby Photo">
+      </div>
+    </div>
+
     <div class="divider">❦ ❦ ❦</div>
 
     <!-- Event Details & Calendar Box -->
@@ -313,11 +337,9 @@
       
       <!-- MINI CALENDAR -->
       <div class="calendar-container">
-        <!-- Change Month & Year here -->
         <div class="calendar-month">November 2026</div>
         
         <div class="calendar-grid">
-          <!-- Weekday Headers -->
           <div class="cal-header">S</div>
           <div class="cal-header">M</div>
           <div class="cal-header">T</div>
@@ -326,7 +348,6 @@
           <div class="cal-header">F</div>
           <div class="cal-header">S</div>
 
-          <!-- Nov 2026 starts on Sunday (day 1) -->
           <div class="cal-day">1</div>
           <div class="cal-day">2</div>
           <div class="cal-day">3</div>
@@ -342,7 +363,7 @@
           <div class="cal-day">13</div>
           <div class="cal-day">14</div>
           
-          <!-- HIGHLIGHTED DATE (e.g., 15) -->
+          <!-- Highlighted date -->
           <div class="cal-day highlight">15</div>
 
           <div class="cal-day">16</div>
@@ -376,12 +397,10 @@
       </p>
 
       <div class="btn-group">
-        <!-- Direct Google Maps pin -->
         <a class="action-btn map-btn" href="https://maps.google.com/?q=Grand+Celebrations+Banquet+Hall" target="_blank">
           📍 Open in Google Maps
         </a>
 
-        <!-- Add to Google Calendar link -->
         <a class="action-btn cal-add-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Naming+Ceremony+of+Baby+Ananya&dates=20261115T050000Z/20261115T083000Z&details=You+are+warmly+invited+to+celebrate+the+Naming+Ceremony+with+us.&location=Grand+Celebrations+Banquet+Hall,+Brahmapur" target="_blank">
           🗓️ Add to Google Calendar
         </a>
